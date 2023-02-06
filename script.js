@@ -2,7 +2,7 @@ const maskSelect = document.querySelector(".maskSelect");
 const calculateBtn = document.querySelector(".calculateBtn");
 const ipInput = document.querySelector(".ipInput");
 
-let mask = 1;
+let mask = 24;
 
 const calculateMask = () => {
   const maskMultiplication = 8;
@@ -29,10 +29,11 @@ const calculateMask = () => {
     }
   }
 
-  console.log({
-    mask: `${octets[0]}.${octets[1]}.${octets[2]}.${octets[3]}`,
-  });
+  return `${octets[0]}.${octets[1]}.${octets[2]}.${octets[3]}`;
 };
+
+// TODO
+const calculateNetwork = () => {};
 
 const isSecured = () => {
   let secured = true;
@@ -58,9 +59,12 @@ calculateBtn.addEventListener("click", () => {
   if (!ipInput.value) return;
   if (!isSecured()) return;
 
-  console.log(`everything is alright m8 :)`);
+  const info = {
+    ipAddress: ipInput.value,
+    mask: calculateMask(),
+  };
 
-  calculateMask();
+  console.log(info);
 });
 
 maskSelect.addEventListener("change", (e) => {
@@ -75,4 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     maskSelect.append(option);
   }
+
+  maskSelect.value = mask;
 });
