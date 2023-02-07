@@ -108,10 +108,7 @@ const isSecured = () => {
   return secured;
 };
 
-calculateBtn.addEventListener("click", () => {
-  if (!ipInput.value) return;
-  if (!isSecured()) return;
-
+const build = () => {
   const info = {
     ipAddress: ipInput.value,
     mask: calculateMask(),
@@ -149,6 +146,13 @@ calculateBtn.addEventListener("click", () => {
     infoContainer.append(infoBox);
     i++;
   }
+};
+
+calculateBtn.addEventListener("click", () => {
+  if (!ipInput.value) return;
+  if (!isSecured()) return;
+
+  build();
 });
 
 maskSelect.addEventListener("change", (e) => {
