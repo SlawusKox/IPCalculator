@@ -1,6 +1,7 @@
 const maskSelect = document.querySelector(".maskSelect");
 const calculateBtn = document.querySelector(".calculateBtn");
 const ipInput = document.querySelector(".ipInput");
+const infoContainer = document.querySelector(".infoContainer");
 
 const maskMultiplication = 8;
 let mask = 24;
@@ -118,7 +119,36 @@ calculateBtn.addEventListener("click", () => {
     wildcard: calculateWildcard(),
   };
 
-  console.log(info);
+  let i = 0;
+
+  infoContainer.innerHTML = "";
+  for (const [k, v] of Object.entries(info)) {
+    const infoBox = document.createElement("div");
+    infoBox.classList.add("infoBox");
+    infoBox.addEventListener("click", () => {
+      navigator.clipboard.writeText(v);
+
+      infoBox.classList.add("copied");
+      setTimeout(() => {
+        infoBox.classList.remove("copied");
+      }, 1500);
+    });
+    infoBox.style.animation = `200ms ease-in-out ${
+      i * 40
+    }ms forwards slideInTop`;
+
+    const pKey = document.createElement("p");
+    pKey.innerHTML = k;
+
+    const spanValue = document.createElement("span");
+    spanValue.classList.add("value");
+    spanValue.innerHTML = v;
+
+    infoBox.append(pKey, spanValue);
+
+    infoContainer.append(infoBox);
+    i++;
+  }
 });
 
 maskSelect.addEventListener("change", (e) => {
