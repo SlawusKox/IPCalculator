@@ -17,8 +17,10 @@
 
 .actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
-  gap: 0 10px;
+  justify-content: center;
+  gap: 10px;
   padding: 20px;
 }
 
@@ -66,4 +68,74 @@
   border-radius: 5px;
   border: 2px solid rgb(182, 188, 206);
   box-shadow: 1.5px 2px 2px black;
+}
+
+.infoContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.infoBox {
+  text-align: center;
+  width: 200px;
+  border: 2px solid rgb(182, 188, 206);
+  border-radius: 5px;
+  padding: 0.8rem;
+  opacity: 0;
+  box-shadow: 1.5px 2px 2px black;
+  position: relative;
+  cursor: pointer;
+
+  transition: all 200ms ease;
+}
+
+.infoBox.copied {
+  border: 2px solid rgb(71, 241, 71);
+  box-shadow: 1.5px 2px 10px rgb(71, 241, 71);
+}
+
+.infoBox:not(.copied)::after {
+  content: "Copy";
+  width: 50px;
+  position: absolute;
+  left: 50%;
+  bottom: -35px;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all 200ms ease;
+}
+
+.infoBox:not(.copied):hover {
+  background: rgb(182, 188, 206);
+}
+
+.infoBox:hover::after {
+  opacity: 1;
+}
+
+.infoBox p {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.infoBox .value {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+@keyframes slideInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
