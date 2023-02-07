@@ -2,10 +2,10 @@ const maskSelect = document.querySelector(".maskSelect");
 const calculateBtn = document.querySelector(".calculateBtn");
 const ipInput = document.querySelector(".ipInput");
 
+const maskMultiplication = 8;
 let mask = 24;
 
 const calculateMask = () => {
-  const maskMultiplication = 8;
   const octets = ipInput.value.split(".");
   let fulfilledOctets = Math.floor(mask / maskMultiplication);
   let initialOctetValue = 128;
@@ -33,7 +33,43 @@ const calculateMask = () => {
 };
 
 // TODO
-const calculateNetwork = () => {};
+const calculateNetwork = () => {
+  const octets = ipInput.value.split(".");
+  let fulfilledOctets = Math.floor(mask / maskMultiplication);
+  let initialOctetValue = 255;
+  let jumps = 0;
+
+  for (let i = 0; i < 4; i++) {
+    if (i < fulfilledOctets) {
+      continue;
+    } else {
+      if (maskMultiplication * fulfilledOctets >= mask) {
+        octets[i] = 0;
+      } else {
+        for (let k = maskMultiplication * fulfilledOctets; k < mask; k++) {
+          initialOctetValue /= 2;
+          jumps = Math.ceil(initialOctetValue);
+        }
+
+        for (let j = jumps; j <= 255; j += jumps) {
+          if (octets[i] > j && octets[i] < j + jumps) {
+            octets[i] = j;
+            break;
+          }
+
+          if (octets[i] < jumps) {
+            octets[i] = 0;
+            break;
+          }
+        }
+
+        fulfilledOctets++;
+      }
+    }
+  }
+
+  return `${octets[0]}.${octets[1]}.${octets[2]}.${octets[3]}`;
+};
 
 const isSecured = () => {
   let secured = true;
@@ -62,6 +98,7 @@ calculateBtn.addEventListener("click", () => {
   const info = {
     ipAddress: ipInput.value,
     mask: calculateMask(),
+    network: calculateNetwork(),
   };
 
   console.log(info);
