@@ -5,6 +5,7 @@ const ipInput = document.querySelector(".ipInput");
 const maskMultiplication = 8;
 let mask = 24;
 
+// DONE
 const calculateMask = () => {
   const octets = ipInput.value.split(".");
   let fulfilledOctets = Math.floor(mask / maskMultiplication);
@@ -32,7 +33,7 @@ const calculateMask = () => {
   return `${octets[0]}.${octets[1]}.${octets[2]}.${octets[3]}`;
 };
 
-// TODO
+// DONE
 const calculateNetwork = () => {
   const octets = ipInput.value.split(".");
   let fulfilledOctets = Math.floor(mask / maskMultiplication);
@@ -71,6 +72,21 @@ const calculateNetwork = () => {
   return `${octets[0]}.${octets[1]}.${octets[2]}.${octets[3]}`;
 };
 
+// DONE
+const calculateWildcard = () => {
+  const octets = ipInput.value.split(".");
+
+  for (let i = 0; i < 4; i++) {
+    if (maskMultiplication * (i + 1) <= mask) {
+      octets[i] = 0;
+    } else {
+      octets[i] = 255;
+    }
+  }
+
+  return `${octets[0]}.${octets[1]}.${octets[2]}.${octets[3]}`;
+};
+
 const isSecured = () => {
   let secured = true;
   const octets = ipInput.value.split(".");
@@ -99,6 +115,7 @@ calculateBtn.addEventListener("click", () => {
     ipAddress: ipInput.value,
     mask: calculateMask(),
     network: calculateNetwork(),
+    wildcard: calculateWildcard(),
   };
 
   console.log(info);
