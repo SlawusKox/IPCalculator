@@ -88,6 +88,7 @@ const calculateWildcard = () => {
   return `${octets[0]}.${octets[1]}.${octets[2]}.${octets[3]}`;
 };
 
+// DONE
 const isSecured = () => {
   let secured = true;
   const octets = ipInput.value.split(".");
@@ -108,6 +109,7 @@ const isSecured = () => {
   return secured;
 };
 
+// DONE
 const build = () => {
   const info = {
     ipAddress: ipInput.value,
