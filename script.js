@@ -89,6 +89,86 @@ const calculateWildcard = () => {
 };
 
 // DONE
+const calculateFirstHost = () => {
+  const octets = ipInput.value.split(".");
+  let fulfilledOctets = Math.floor(mask / maskMultiplication);
+  let initialOctetValue = 255;
+  let jumps = 0;
+
+  for (let i = 0; i < 4; i++) {
+    if (i < fulfilledOctets) {
+      continue;
+    } else {
+      if (maskMultiplication * fulfilledOctets >= mask) {
+        octets[i] = 0;
+      } else {
+        for (let k = maskMultiplication * fulfilledOctets; k < mask; k++) {
+          initialOctetValue /= 2;
+          jumps = Math.ceil(initialOctetValue);
+        }
+
+        for (let j = jumps; j <= 255; j += jumps) {
+          if (octets[i] < jumps) {
+            octets[i] = 0 + 1;
+            break;
+          }
+
+          if (octets[i] > j && octets[i] < j + jumps) {
+            octets[i] = j + 1;
+            break;
+          }
+        }
+
+        fulfilledOctets++;
+      }
+    }
+  }
+
+  return `${octets[0]}.${octets[1]}.${octets[2]}.${parseInt(octets[3]) + 1}`;
+};
+
+// DONE
+const calculateLastHost = () => {
+  const octets = ipInput.value.split(".");
+  let fulfilledOctets = Math.floor(mask / maskMultiplication);
+  let initialOctetValue = 255;
+  let jumps = 0;
+
+  for (let i = 0; i < 4; i++) {
+    if (i < fulfilledOctets) {
+      continue;
+    } else {
+      if (maskMultiplication * fulfilledOctets >= mask) {
+        octets[i] = 255;
+      } else {
+        for (let k = maskMultiplication * fulfilledOctets; k < mask; k++) {
+          initialOctetValue /= 2;
+          jumps = initialOctetValue;
+        }
+
+        for (let j = jumps; j <= 255; j += jumps) {
+          if (octets[i] < j && octets[i] < j + jumps) {
+            octets[i] = Math.floor(j - 1);
+            break;
+          }
+
+          if (octets[i] < jumps) {
+            octets[i] = 255 - 1;
+            break;
+          }
+        }
+
+        fulfilledOctets++;
+      }
+    }
+  }
+
+  return `${octets[0]}.${octets[1]}.${octets[2]}.${
+    octets[3] > 0 ? octets[3] : 1
+  }`;
+};
+
+// DONE
 const isSecured = () => {
   let secured = true;
   const octets = ipInput.value.split(".");
@@ -111,11 +191,16 @@ const isSecured = () => {
 
 // DONE
 const build = () => {
+  const numberOfHosts = Math.pow(2, 32 - mask) - 2;
+
   const info = {
-    ipAddress: ipInput.value,
+    ip_address: ipInput.value,
     mask: calculateMask(),
     network: calculateNetwork(),
     wildcard: calculateWildcard(),
+    first_host: calculateFirstHost(),
+    last_host: calculateLastHost(),
+    number_of_hosts: numberOfHosts < 0 ? 1 : numberOfHosts,
   };
 
   let i = 0;
@@ -137,7 +222,7 @@ const build = () => {
     }ms forwards slideInTop`;
 
     const pKey = document.createElement("p");
-    pKey.innerHTML = k;
+    pKey.innerHTML = `${k.replace("_", " ")}`;
 
     const spanValue = document.createElement("span");
     spanValue.classList.add("value");
