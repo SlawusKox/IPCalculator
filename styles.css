@@ -75,17 +75,19 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 36px 12px;
+  max-width: 900px;
 }
 
 .infoBox {
   text-align: center;
-  width: 200px;
+  min-width: 200px;
   border: 2px solid rgb(182, 188, 206);
   border-radius: 5px;
   padding: 0.8rem;
   opacity: 0;
   box-shadow: 1.5px 2px 2px black;
+  user-select: none;
   position: relative;
   cursor: pointer;
 
@@ -123,9 +125,8 @@
 
 .infoBox .value {
   font-weight: 600;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
+  border-bottom: 3px solid black;
+  padding: 0 4px;
 }
 
 @keyframes slideInTop {
