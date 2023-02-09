@@ -89,6 +89,33 @@ const calculateWildcard = () => {
 };
 
 // DONE
+const calculateBroadcast = () => {
+  const octets = ipInput.value.split(".");
+  let fulfilledOctets = Math.floor(mask / maskMultiplication);
+  let initialOctetValue = 255;
+  let jumps = 0;
+
+  for (let i = 0; i < 4; i++) {
+    if (i < fulfilledOctets) {
+      continue;
+    } else {
+      if (maskMultiplication * fulfilledOctets >= mask) {
+        octets[i] = 255;
+      } else {
+        for (let k = maskMultiplication * fulfilledOctets; k < mask; k++) {
+          initialOctetValue /= 2;
+          jumps = Math.ceil(initialOctetValue);
+        }
+
+        octets[i] = jumps - 1;
+      }
+    }
+  }
+
+  return `${octets[0]}.${octets[1]}.${octets[2]}.${octets[3]}`;
+};
+
+// DONE
 const calculateFirstHost = () => {
   const octets = ipInput.value.split(".");
   let fulfilledOctets = Math.floor(mask / maskMultiplication);
@@ -109,12 +136,12 @@ const calculateFirstHost = () => {
 
         for (let j = jumps; j <= 255; j += jumps) {
           if (octets[i] < jumps) {
-            octets[i] = 0 + 1;
+            octets[i] = 0;
             break;
           }
 
           if (octets[i] > j && octets[i] < j + jumps) {
-            octets[i] = j + 1;
+            octets[i] = j;
             break;
           }
         }
@@ -148,7 +175,7 @@ const calculateLastHost = () => {
 
         for (let j = jumps; j <= 255; j += jumps) {
           if (octets[i] < j && octets[i] < j + jumps) {
-            octets[i] = Math.floor(j - 1);
+            octets[i] = Math.floor(j);
             break;
           }
 
@@ -164,7 +191,7 @@ const calculateLastHost = () => {
   }
 
   return `${octets[0]}.${octets[1]}.${octets[2]}.${
-    octets[3] > 0 ? octets[3] : 1
+    octets[3] > 0 ? octets[3] - 1 : 1
   }`;
 };
 
@@ -198,6 +225,7 @@ const build = () => {
     mask: calculateMask(),
     network: calculateNetwork(),
     wildcard: calculateWildcard(),
+    broadcast: calculateBroadcast(),
     first_host: calculateFirstHost(),
     last_host: calculateLastHost(),
     number_of_hosts: numberOfHosts < 0 ? 1 : numberOfHosts,
