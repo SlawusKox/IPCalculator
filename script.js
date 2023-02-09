@@ -105,7 +105,7 @@ const calculateWildcard = () => {
   return `${octets[0]}.${octets[1]}.${octets[2]}.${octets[3]}`;
 };
 
-// TODO
+// DONE
 const calculateBroadcast = () => {
   const octets = ipInput.value.split(".");
   let fulfilledOctets = Math.floor(mask / maskMultiplication);
@@ -130,8 +130,8 @@ const calculateBroadcast = () => {
             break;
           }
 
-          if (octets[i] > j - 1 && octets[i] < j + jumps) {
-            octets[i] = j + jumps;
+          if (octets[i] <= j && octets[i] < j + jumps) {
+            octets[i] = j;
             break;
           }
         }
@@ -198,17 +198,20 @@ const calculateLastHost = () => {
       } else {
         for (let k = maskMultiplication * fulfilledOctets; k < mask; k++) {
           initialOctetValue /= 2;
-          jumps = initialOctetValue;
+          jumps = Math.ceil(initialOctetValue);
         }
 
         for (let j = jumps; j <= 255; j += jumps) {
-          if (octets[i] < j && octets[i] < j + jumps) {
-            octets[i] = Math.floor(j);
-            break;
-          }
+          // if (octets[i] < jumps) {
+          //   octets[i] = 255 - 1;
+          //   break;
+          // }
 
-          if (octets[i] < jumps) {
-            octets[i] = 255 - 1;
+          if (octets[i] <= j && octets[i] <= j + jumps) {
+            octets[i] = j - 1;
+            break;
+          } else if (octets[i] < j && octets[i] <= j + jumps) {
+            octets[i] = j + jumps;
             break;
           }
         }
@@ -219,7 +222,7 @@ const calculateLastHost = () => {
   }
 
   return `${octets[0]}.${octets[1]}.${octets[2]}.${
-    octets[3] > 0 ? octets[3] - 1 : 1
+    octets[3] > 0 ? octets[3] : 1
   }`;
 };
 
