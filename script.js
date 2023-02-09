@@ -281,7 +281,7 @@ const build = () => {
     }ms forwards slideInTop`;
 
     const pKey = document.createElement("p");
-    pKey.innerHTML = `${k.replace("_", " ")}`;
+    pKey.innerHTML = `${k.replaceAll("_", " ")}`;
 
     const spanValue = document.createElement("span");
     spanValue.classList.add("value");
