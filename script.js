@@ -124,20 +124,17 @@ const calculateBroadcast = () => {
           jumps = Math.ceil(initialOctetValue);
         }
 
-        for (let j = jumps; j <= 255; j += jumps) {
+        for (let j = jumps - 1; j <= 255; j += jumps) {
           if (octets[i] < jumps) {
-            octets[i] = jumps;
+            octets[i] = j;
             break;
           }
 
-          if (octets[i] > j && octets[i] < j + jumps) {
+          if (octets[i] > j - 1 && octets[i] < j + jumps) {
             octets[i] = j + jumps;
             break;
           }
         }
-
-        octets[i]--;
-
         fulfilledOctets++;
       }
     }
@@ -254,8 +251,8 @@ const build = () => {
   const info = {
     ip_address: ipInput.value,
     mask: calculateMask(),
-    network: calculateNetwork(),
     wildcard: calculateWildcard(),
+    network: calculateNetwork(),
     broadcast: calculateBroadcast(),
     first_host: calculateFirstHost(),
     last_host: calculateLastHost(),
