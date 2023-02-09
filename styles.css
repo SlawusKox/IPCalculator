@@ -76,6 +76,7 @@
   align-items: center;
   justify-content: center;
   gap: 36px 12px;
+  min-width: 320px;
   max-width: 900px;
 }
 
