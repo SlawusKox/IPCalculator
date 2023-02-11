@@ -702,7 +702,13 @@ const calculateFirstHost = () => {
     octets[3] = 0;
   }
 
-  return `${octets[0]}.${octets[1]}.${octets[2]}.${parseInt(octets[3]) + 1}`;
+  if (mask == 32 && octets[3] == 255) {
+    octets[3] = 255;
+  }
+
+  return `${octets[0]}.${octets[1]}.${octets[2]}.${
+    mask !== 32 ? parseInt(octets[3]) + 1 : octets[3]
+  }`;
 };
 
 // DONE
@@ -734,6 +740,10 @@ const calculateLastHost = () => {
         fulfilledOctets++;
       }
     }
+  }
+
+  if (mask == 32 && octets[3] == 255) {
+    octets[3] = 255;
   }
 
   return `${octets[0]}.${octets[1]}.${octets[2]}.${
@@ -813,7 +823,7 @@ const build = () => {
 };
 
 const setMask = (newMask) => {
-  mask = newMask;
+  mask = Number(newMask);
 };
 
 
@@ -931,4 +941,4 @@ document.addEventListener("DOMContentLoaded", prepare);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundled0ed952d45d5dd7879c3.js.map
+//# sourceMappingURL=bundle17f4f6e7958861457e46.js.map
