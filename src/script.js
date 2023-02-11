@@ -143,7 +143,7 @@ const calculateBroadcast = () => {
   return `${octets[0]}.${octets[1]}.${octets[2]}.${octets[3]}`;
 };
 
-// TODO - Update
+// DONE
 const calculateFirstHost = () => {
   const octets = ipInput.value.split(".");
   let fulfilledOctets = Math.floor(mask / maskMultiplication);
@@ -186,7 +186,7 @@ const calculateFirstHost = () => {
   return `${octets[0]}.${octets[1]}.${octets[2]}.${parseInt(octets[3]) + 1}`;
 };
 
-// TODO - Update
+// DONE
 const calculateLastHost = () => {
   const octets = ipInput.value.split(".");
   let fulfilledOctets = Math.floor(mask / maskMultiplication);
