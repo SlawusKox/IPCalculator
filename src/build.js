@@ -181,7 +181,13 @@ const calculateFirstHost = () => {
     octets[3] = 0;
   }
 
-  return `${octets[0]}.${octets[1]}.${octets[2]}.${parseInt(octets[3]) + 1}`;
+  if (mask == 32 && octets[3] == 255) {
+    octets[3] = 255;
+  }
+
+  return `${octets[0]}.${octets[1]}.${octets[2]}.${
+    mask !== 32 ? parseInt(octets[3]) + 1 : octets[3]
+  }`;
 };
 
 // DONE
@@ -213,6 +219,10 @@ const calculateLastHost = () => {
         fulfilledOctets++;
       }
     }
+  }
+
+  if (mask == 32 && octets[3] == 255) {
+    octets[3] = 255;
   }
 
   return `${octets[0]}.${octets[1]}.${octets[2]}.${
@@ -292,7 +302,7 @@ const build = () => {
 };
 
 const setMask = (newMask) => {
-  mask = newMask;
+  mask = Number(newMask);
 };
 
 export { build, setMask, mask };
