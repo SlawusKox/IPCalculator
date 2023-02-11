@@ -11,6 +11,9 @@
   "license": "ISC",
   "homepage": "https://github.com/SlawusKox/IPCalculator#readme",
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.0",
     "sass-loader": "^13.2.0",
