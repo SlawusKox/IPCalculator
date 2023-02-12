@@ -177,8 +177,10 @@ const calculateFirstHost = () => {
     }
   }
 
-  if (octets[3] == 0 || octets[3] == 1) {
+  if (octets[3] == 0) {
     octets[3] = 0;
+  } else if (octets[3] == 1) {
+    octets[3] = 1;
   }
 
   if (mask == 32 && octets[3] == 255) {

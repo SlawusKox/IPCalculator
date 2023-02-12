@@ -698,8 +698,10 @@ const calculateFirstHost = () => {
     }
   }
 
-  if (octets[3] == 0 || octets[3] == 1) {
+  if (octets[3] == 0) {
     octets[3] = 0;
+  } else if (octets[3] == 1) {
+    octets[3] = 1;
   }
 
   if (mask == 32 && octets[3] == 255) {
@@ -941,4 +943,4 @@ document.addEventListener("DOMContentLoaded", prepare);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle17f4f6e7958861457e46.js.map
+//# sourceMappingURL=bundle30b87e0a2a2df7f8bc2a.js.map
