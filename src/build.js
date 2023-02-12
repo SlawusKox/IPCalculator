@@ -177,19 +177,15 @@ const calculateFirstHost = () => {
     }
   }
 
-  if (octets[3] == 0) {
+  if (octets[3] == 0 || octets[3] == 1) {
     octets[3] = 0;
-  } else if (octets[3] == 1) {
-    octets[3] = 1;
   }
 
   if (mask == 32 && octets[3] == 255) {
     octets[3] = 255;
   }
 
-  return `${octets[0]}.${octets[1]}.${octets[2]}.${
-    mask !== 32 ? parseInt(octets[3]) + 1 : octets[3]
-  }`;
+  return `${octets[0]}.${octets[1]}.${octets[2]}.${parseInt(octets[3]) + 1}`;
 };
 
 // DONE
