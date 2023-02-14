@@ -706,7 +706,14 @@ const calculateFirstHost = () => {
     octets[3] = 255;
   }
 
-  return `${octets[0]}.${octets[1]}.${octets[2]}.${parseInt(octets[3]) + 1}`;
+  const fourthOctet =
+    mask !== 32
+      ? parseInt(octets[3]) + 1
+      : parseInt(octets[3]) % 2 === 0
+      ? parseInt(octets[3]) + 1
+      : octets[3];
+
+  return `${octets[0]}.${octets[1]}.${octets[2]}.${fourthOctet}`;
 };
 
 // DONE
@@ -939,4 +946,4 @@ document.addEventListener("DOMContentLoaded", prepare);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle7df0aceb14504c48529a.js.map
+//# sourceMappingURL=bundledc2e9e190befb5fb85ca.js.map
