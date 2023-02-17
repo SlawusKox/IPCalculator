@@ -276,34 +276,45 @@ const build = () => {
 
   let i = 0;
 
-  infoContainer.innerHTML = "";
-  for (const [k, v] of Object.entries(info)) {
-    const infoBox = document.createElement("div");
-    infoBox.classList.add("infoBox");
-    infoBox.addEventListener("click", () => {
-      navigator.clipboard.writeText(v);
-
-      infoBox.classList.add("copied");
-      setTimeout(() => {
-        infoBox.classList.remove("copied");
-      }, 1500);
+  if (infoContainer.children.length > 0) {
+    [...infoContainer.children].forEach((box) => {
+      box.style.animation = "230ms ease forwards hideInBottom";
     });
-    infoBox.style.animation = `200ms ease-in-out ${
-      i * 40
-    }ms forwards slideInTop`;
-
-    const pKey = document.createElement("p");
-    pKey.innerHTML = `${k.replaceAll("_", " ")}`;
-
-    const spanValue = document.createElement("span");
-    spanValue.classList.add("value");
-    spanValue.innerHTML = v;
-
-    infoBox.append(pKey, spanValue);
-
-    infoContainer.append(infoBox);
-    i++;
   }
+
+  setTimeout(
+    () => {
+      infoContainer.innerHTML = "";
+      for (const [k, v] of Object.entries(info)) {
+        const infoBox = document.createElement("div");
+        infoBox.classList.add("infoBox");
+        infoBox.addEventListener("click", () => {
+          navigator.clipboard.writeText(v);
+
+          infoBox.classList.add("copied");
+          setTimeout(() => {
+            infoBox.classList.remove("copied");
+          }, 1500);
+        });
+        infoBox.style.animation = `200ms ease-in-out ${
+          i * 40
+        }ms forwards slideInTop`;
+
+        const pKey = document.createElement("p");
+        pKey.innerHTML = `${k.replaceAll("_", " ")}`;
+
+        const spanValue = document.createElement("span");
+        spanValue.classList.add("value");
+        spanValue.innerHTML = v;
+
+        infoBox.append(pKey, spanValue);
+
+        infoContainer.append(infoBox);
+        i++;
+      }
+    },
+    infoContainer.children.length > 0 ? 200 : 0
+  );
 };
 
 const setMask = (newMask) => {
