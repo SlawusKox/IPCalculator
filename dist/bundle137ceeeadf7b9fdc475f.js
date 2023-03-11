@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  font-family: \"Lucida Sans\", \"Lucida Sans Regular\", \"Lucida Grande\",\r\n    \"Lucida Sans Unicode\", Geneva, Verdana, sans-serif;\r\n}\r\n\r\n#container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n.actions {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  align-items: flex-end;\r\n  justify-content: center;\r\n  gap: 10px;\r\n  padding: 20px;\r\n}\r\n\r\n.actionBox {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.actions .ipInput {\r\n  width: 250px;\r\n  text-align: center;\r\n  outline: none;\r\n  border: 2px solid rgb(182, 188, 206);\r\n}\r\n\r\n.actions .maskSelect {\r\n  text-align: center;\r\n  cursor: pointer;\r\n  outline: none;\r\n}\r\n\r\n.actions .calculateBtn {\r\n  background: none;\r\n  cursor: pointer;\r\n  font-weight: 600;\r\n\r\n  transition: all 200ms ease;\r\n}\r\n\r\n.actions .calculateBtn:hover {\r\n  background: rgb(179, 189, 216);\r\n}\r\n\r\n.actions .calculateBtn:active {\r\n  transform: scale(97%);\r\n}\r\n\r\n.actions .ipInput,\r\n.maskSelect,\r\n.calculateBtn {\r\n  height: 40px;\r\n  padding: 6px;\r\n  border-radius: 5px;\r\n  border: 2px solid rgb(182, 188, 206);\r\n  box-shadow: 1.5px 2px 2px black;\r\n}\r\n\r\n.infoContainer {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  align-items: center;\r\n  justify-content: center;\r\n  gap: 36px 12px;\r\n  min-width: 320px;\r\n  max-width: 900px;\r\n}\r\n\r\n.infoBox {\r\n  text-align: center;\r\n  min-width: 200px;\r\n  border: 2px solid rgb(182, 188, 206);\r\n  border-radius: 5px;\r\n  padding: 0.8rem;\r\n  opacity: 0;\r\n  box-shadow: 1.5px 2px 2px black;\r\n  user-select: none;\r\n  position: relative;\r\n  cursor: pointer;\r\n\r\n  transition: all 200ms ease;\r\n}\r\n\r\n.infoBox.copied {\r\n  border: 2px solid rgb(71, 241, 71);\r\n  box-shadow: 1.5px 2px 10px rgb(71, 241, 71);\r\n}\r\n\r\n.infoBox:not(.copied)::after {\r\n  content: \"Copy\";\r\n  width: 50px;\r\n  position: absolute;\r\n  left: 50%;\r\n  bottom: -35px;\r\n  transform: translateX(-50%);\r\n  opacity: 0;\r\n  transition: all 200ms ease;\r\n}\r\n\r\n.infoBox:not(.copied):hover {\r\n  background: rgb(182, 188, 206);\r\n}\r\n\r\n.infoBox:hover::after {\r\n  opacity: 1;\r\n}\r\n\r\n.infoBox p {\r\n  text-transform: uppercase;\r\n  font-weight: 800;\r\n}\r\n\r\n.infoBox .value {\r\n  font-weight: 600;\r\n  border-bottom: 3px solid black;\r\n  padding: 0 4px;\r\n}\r\n\r\n@keyframes slideInTop {\r\n  0% {\r\n    opacity: 0;\r\n    transform: translateY(-20px);\r\n  }\r\n\r\n  100% {\r\n    opacity: 1;\r\n    transform: translateY(0);\r\n  }\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/styles/template.css"],"names":[],"mappings":"AAAA;EACE,SAAS;EACT,UAAU;EACV,sBAAsB;EACtB;sDACoD;AACtD;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,uBAAuB;EACvB,WAAW;EACX,YAAY;AACd;;AAEA;EACE,aAAa;EACb,eAAe;EACf,qBAAqB;EACrB,uBAAuB;EACvB,SAAS;EACT,aAAa;AACf;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,uBAAuB;AACzB;;AAEA;EACE,YAAY;EACZ,kBAAkB;EAClB,aAAa;EACb,oCAAoC;AACtC;;AAEA;EACE,kBAAkB;EAClB,eAAe;EACf,aAAa;AACf;;AAEA;EACE,gBAAgB;EAChB,eAAe;EACf,gBAAgB;;EAEhB,0BAA0B;AAC5B;;AAEA;EACE,8BAA8B;AAChC;;AAEA;EACE,qBAAqB;AACvB;;AAEA;;;EAGE,YAAY;EACZ,YAAY;EACZ,kBAAkB;EAClB,oCAAoC;EACpC,+BAA+B;AACjC;;AAEA;EACE,aAAa;EACb,eAAe;EACf,mBAAmB;EACnB,uBAAuB;EACvB,cAAc;EACd,gBAAgB;EAChB,gBAAgB;AAClB;;AAEA;EACE,kBAAkB;EAClB,gBAAgB;EAChB,oCAAoC;EACpC,kBAAkB;EAClB,eAAe;EACf,UAAU;EACV,+BAA+B;EAC/B,iBAAiB;EACjB,kBAAkB;EAClB,eAAe;;EAEf,0BAA0B;AAC5B;;AAEA;EACE,kCAAkC;EAClC,2CAA2C;AAC7C;;AAEA;EACE,eAAe;EACf,WAAW;EACX,kBAAkB;EAClB,SAAS;EACT,aAAa;EACb,2BAA2B;EAC3B,UAAU;EACV,0BAA0B;AAC5B;;AAEA;EACE,8BAA8B;AAChC;;AAEA;EACE,UAAU;AACZ;;AAEA;EACE,yBAAyB;EACzB,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;EAChB,8BAA8B;EAC9B,cAAc;AAChB;;AAEA;EACE;IACE,UAAU;IACV,4BAA4B;EAC9B;;EAEA;IACE,UAAU;IACV,wBAAwB;EAC1B;AACF","sourcesContent":["* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  font-family: \"Lucida Sans\", \"Lucida Sans Regular\", \"Lucida Grande\",\r\n    \"Lucida Sans Unicode\", Geneva, Verdana, sans-serif;\r\n}\r\n\r\n#container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n.actions {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  align-items: flex-end;\r\n  justify-content: center;\r\n  gap: 10px;\r\n  padding: 20px;\r\n}\r\n\r\n.actionBox {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.actions .ipInput {\r\n  width: 250px;\r\n  text-align: center;\r\n  outline: none;\r\n  border: 2px solid rgb(182, 188, 206);\r\n}\r\n\r\n.actions .maskSelect {\r\n  text-align: center;\r\n  cursor: pointer;\r\n  outline: none;\r\n}\r\n\r\n.actions .calculateBtn {\r\n  background: none;\r\n  cursor: pointer;\r\n  font-weight: 600;\r\n\r\n  transition: all 200ms ease;\r\n}\r\n\r\n.actions .calculateBtn:hover {\r\n  background: rgb(179, 189, 216);\r\n}\r\n\r\n.actions .calculateBtn:active {\r\n  transform: scale(97%);\r\n}\r\n\r\n.actions .ipInput,\r\n.maskSelect,\r\n.calculateBtn {\r\n  height: 40px;\r\n  padding: 6px;\r\n  border-radius: 5px;\r\n  border: 2px solid rgb(182, 188, 206);\r\n  box-shadow: 1.5px 2px 2px black;\r\n}\r\n\r\n.infoContainer {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  align-items: center;\r\n  justify-content: center;\r\n  gap: 36px 12px;\r\n  min-width: 320px;\r\n  max-width: 900px;\r\n}\r\n\r\n.infoBox {\r\n  text-align: center;\r\n  min-width: 200px;\r\n  border: 2px solid rgb(182, 188, 206);\r\n  border-radius: 5px;\r\n  padding: 0.8rem;\r\n  opacity: 0;\r\n  box-shadow: 1.5px 2px 2px black;\r\n  user-select: none;\r\n  position: relative;\r\n  cursor: pointer;\r\n\r\n  transition: all 200ms ease;\r\n}\r\n\r\n.infoBox.copied {\r\n  border: 2px solid rgb(71, 241, 71);\r\n  box-shadow: 1.5px 2px 10px rgb(71, 241, 71);\r\n}\r\n\r\n.infoBox:not(.copied)::after {\r\n  content: \"Copy\";\r\n  width: 50px;\r\n  position: absolute;\r\n  left: 50%;\r\n  bottom: -35px;\r\n  transform: translateX(-50%);\r\n  opacity: 0;\r\n  transition: all 200ms ease;\r\n}\r\n\r\n.infoBox:not(.copied):hover {\r\n  background: rgb(182, 188, 206);\r\n}\r\n\r\n.infoBox:hover::after {\r\n  opacity: 1;\r\n}\r\n\r\n.infoBox p {\r\n  text-transform: uppercase;\r\n  font-weight: 800;\r\n}\r\n\r\n.infoBox .value {\r\n  font-weight: 600;\r\n  border-bottom: 3px solid black;\r\n  padding: 0 4px;\r\n}\r\n\r\n@keyframes slideInTop {\r\n  0% {\r\n    opacity: 0;\r\n    transform: translateY(-20px);\r\n  }\r\n\r\n  100% {\r\n    opacity: 1;\r\n    transform: translateY(0);\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  font-family: \"Lucida Sans\", \"Lucida Sans Regular\", \"Lucida Grande\",\r\n    \"Lucida Sans Unicode\", Geneva, Verdana, sans-serif;\r\n}\r\n\r\n#container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  width: 100%;\r\n  height: 100vh;\r\n  position: relative;\r\n}\r\n\r\n.actions {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  align-items: flex-end;\r\n  justify-content: center;\r\n  gap: 10px;\r\n  padding: 20px;\r\n}\r\n\r\n.actionBox {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.actions .ipInput {\r\n  width: 250px;\r\n  text-align: center;\r\n  outline: none;\r\n  border: 2px solid rgb(182, 188, 206);\r\n}\r\n\r\n.actions .maskSelect {\r\n  text-align: center;\r\n  cursor: pointer;\r\n  outline: none;\r\n}\r\n\r\n.actions .calculateBtn {\r\n  background: none;\r\n  cursor: pointer;\r\n  font-weight: 600;\r\n\r\n  transition: all 200ms ease;\r\n}\r\n\r\n.actions .calculateBtn:hover {\r\n  background: rgb(179, 189, 216);\r\n}\r\n\r\n.actions .calculateBtn:active {\r\n  transform: scale(97%);\r\n}\r\n\r\n.actions .ipInput,\r\n.maskSelect,\r\n.calculateBtn {\r\n  height: 40px;\r\n  padding: 6px;\r\n  border-radius: 5px;\r\n  border: 2px solid rgb(182, 188, 206);\r\n  box-shadow: 1.5px 2px 2px black;\r\n}\r\n\r\n.infoContainer {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  align-items: center;\r\n  justify-content: center;\r\n  gap: 36px 12px;\r\n  min-width: 320px;\r\n  max-width: 900px;\r\n}\r\n\r\n.infoBox {\r\n  text-align: center;\r\n  min-width: 200px;\r\n  border: 2px solid rgb(182, 188, 206);\r\n  border-radius: 5px;\r\n  padding: 0.8rem;\r\n  opacity: 0;\r\n  box-shadow: 1.5px 2px 2px black;\r\n  user-select: none;\r\n  position: relative;\r\n  cursor: pointer;\r\n\r\n  transition: all 200ms ease;\r\n}\r\n\r\n.infoBox.copied {\r\n  border: 2px solid rgb(71, 241, 71);\r\n  box-shadow: 1.5px 2px 10px rgb(71, 241, 71);\r\n}\r\n\r\n.infoBox:not(.copied)::after {\r\n  content: \"Copy\";\r\n  width: 50px;\r\n  position: absolute;\r\n  left: 50%;\r\n  bottom: -35px;\r\n  transform: translateX(-50%);\r\n  opacity: 0;\r\n  transition: all 200ms ease;\r\n}\r\n\r\n.infoBox:not(.copied):hover {\r\n  background: rgb(182, 188, 206);\r\n}\r\n\r\n.infoBox:hover::after {\r\n  opacity: 1;\r\n}\r\n\r\n.infoBox p {\r\n  text-transform: uppercase;\r\n  font-weight: 800;\r\n}\r\n\r\n.infoBox .value {\r\n  font-weight: 600;\r\n  border-bottom: 3px solid black;\r\n  padding: 0 4px;\r\n}\r\n\r\nfooter {\r\n  width: 100%;\r\n  padding: 4px;\r\n  background-color: rgb(207, 207, 207, 0.2);\r\n  text-align: center;\r\n  bottom: 0;\r\n  position: fixed;\r\n}\r\n\r\n@keyframes slideInTop {\r\n  0% {\r\n    opacity: 0;\r\n    transform: translateY(-20px);\r\n  }\r\n\r\n  100% {\r\n    opacity: 1;\r\n    transform: translateY(0);\r\n  }\r\n}\r\n\r\n@keyframes hideInBottom {\r\n  0% {\r\n    opacity: 1;\r\n    transform: translateY(0);\r\n  }\r\n\r\n  100% {\r\n    opacity: 0;\r\n    transform: translateY(20px);\r\n  }\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/styles/template.css"],"names":[],"mappings":"AAAA;EACE,SAAS;EACT,UAAU;EACV,sBAAsB;EACtB;sDACoD;AACtD;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,WAAW;EACX,aAAa;EACb,kBAAkB;AACpB;;AAEA;EACE,aAAa;EACb,eAAe;EACf,qBAAqB;EACrB,uBAAuB;EACvB,SAAS;EACT,aAAa;AACf;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,uBAAuB;AACzB;;AAEA;EACE,YAAY;EACZ,kBAAkB;EAClB,aAAa;EACb,oCAAoC;AACtC;;AAEA;EACE,kBAAkB;EAClB,eAAe;EACf,aAAa;AACf;;AAEA;EACE,gBAAgB;EAChB,eAAe;EACf,gBAAgB;;EAEhB,0BAA0B;AAC5B;;AAEA;EACE,8BAA8B;AAChC;;AAEA;EACE,qBAAqB;AACvB;;AAEA;;;EAGE,YAAY;EACZ,YAAY;EACZ,kBAAkB;EAClB,oCAAoC;EACpC,+BAA+B;AACjC;;AAEA;EACE,aAAa;EACb,eAAe;EACf,mBAAmB;EACnB,uBAAuB;EACvB,cAAc;EACd,gBAAgB;EAChB,gBAAgB;AAClB;;AAEA;EACE,kBAAkB;EAClB,gBAAgB;EAChB,oCAAoC;EACpC,kBAAkB;EAClB,eAAe;EACf,UAAU;EACV,+BAA+B;EAC/B,iBAAiB;EACjB,kBAAkB;EAClB,eAAe;;EAEf,0BAA0B;AAC5B;;AAEA;EACE,kCAAkC;EAClC,2CAA2C;AAC7C;;AAEA;EACE,eAAe;EACf,WAAW;EACX,kBAAkB;EAClB,SAAS;EACT,aAAa;EACb,2BAA2B;EAC3B,UAAU;EACV,0BAA0B;AAC5B;;AAEA;EACE,8BAA8B;AAChC;;AAEA;EACE,UAAU;AACZ;;AAEA;EACE,yBAAyB;EACzB,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;EAChB,8BAA8B;EAC9B,cAAc;AAChB;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,yCAAyC;EACzC,kBAAkB;EAClB,SAAS;EACT,eAAe;AACjB;;AAEA;EACE;IACE,UAAU;IACV,4BAA4B;EAC9B;;EAEA;IACE,UAAU;IACV,wBAAwB;EAC1B;AACF;;AAEA;EACE;IACE,UAAU;IACV,wBAAwB;EAC1B;;EAEA;IACE,UAAU;IACV,2BAA2B;EAC7B;AACF","sourcesContent":["* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  font-family: \"Lucida Sans\", \"Lucida Sans Regular\", \"Lucida Grande\",\r\n    \"Lucida Sans Unicode\", Geneva, Verdana, sans-serif;\r\n}\r\n\r\n#container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  width: 100%;\r\n  height: 100vh;\r\n  position: relative;\r\n}\r\n\r\n.actions {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  align-items: flex-end;\r\n  justify-content: center;\r\n  gap: 10px;\r\n  padding: 20px;\r\n}\r\n\r\n.actionBox {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.actions .ipInput {\r\n  width: 250px;\r\n  text-align: center;\r\n  outline: none;\r\n  border: 2px solid rgb(182, 188, 206);\r\n}\r\n\r\n.actions .maskSelect {\r\n  text-align: center;\r\n  cursor: pointer;\r\n  outline: none;\r\n}\r\n\r\n.actions .calculateBtn {\r\n  background: none;\r\n  cursor: pointer;\r\n  font-weight: 600;\r\n\r\n  transition: all 200ms ease;\r\n}\r\n\r\n.actions .calculateBtn:hover {\r\n  background: rgb(179, 189, 216);\r\n}\r\n\r\n.actions .calculateBtn:active {\r\n  transform: scale(97%);\r\n}\r\n\r\n.actions .ipInput,\r\n.maskSelect,\r\n.calculateBtn {\r\n  height: 40px;\r\n  padding: 6px;\r\n  border-radius: 5px;\r\n  border: 2px solid rgb(182, 188, 206);\r\n  box-shadow: 1.5px 2px 2px black;\r\n}\r\n\r\n.infoContainer {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  align-items: center;\r\n  justify-content: center;\r\n  gap: 36px 12px;\r\n  min-width: 320px;\r\n  max-width: 900px;\r\n}\r\n\r\n.infoBox {\r\n  text-align: center;\r\n  min-width: 200px;\r\n  border: 2px solid rgb(182, 188, 206);\r\n  border-radius: 5px;\r\n  padding: 0.8rem;\r\n  opacity: 0;\r\n  box-shadow: 1.5px 2px 2px black;\r\n  user-select: none;\r\n  position: relative;\r\n  cursor: pointer;\r\n\r\n  transition: all 200ms ease;\r\n}\r\n\r\n.infoBox.copied {\r\n  border: 2px solid rgb(71, 241, 71);\r\n  box-shadow: 1.5px 2px 10px rgb(71, 241, 71);\r\n}\r\n\r\n.infoBox:not(.copied)::after {\r\n  content: \"Copy\";\r\n  width: 50px;\r\n  position: absolute;\r\n  left: 50%;\r\n  bottom: -35px;\r\n  transform: translateX(-50%);\r\n  opacity: 0;\r\n  transition: all 200ms ease;\r\n}\r\n\r\n.infoBox:not(.copied):hover {\r\n  background: rgb(182, 188, 206);\r\n}\r\n\r\n.infoBox:hover::after {\r\n  opacity: 1;\r\n}\r\n\r\n.infoBox p {\r\n  text-transform: uppercase;\r\n  font-weight: 800;\r\n}\r\n\r\n.infoBox .value {\r\n  font-weight: 600;\r\n  border-bottom: 3px solid black;\r\n  padding: 0 4px;\r\n}\r\n\r\nfooter {\r\n  width: 100%;\r\n  padding: 4px;\r\n  background-color: rgb(207, 207, 207, 0.2);\r\n  text-align: center;\r\n  bottom: 0;\r\n  position: fixed;\r\n}\r\n\r\n@keyframes slideInTop {\r\n  0% {\r\n    opacity: 0;\r\n    transform: translateY(-20px);\r\n  }\r\n\r\n  100% {\r\n    opacity: 1;\r\n    transform: translateY(0);\r\n  }\r\n}\r\n\r\n@keyframes hideInBottom {\r\n  0% {\r\n    opacity: 1;\r\n    transform: translateY(0);\r\n  }\r\n\r\n  100% {\r\n    opacity: 0;\r\n    transform: translateY(20px);\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -797,34 +797,45 @@ const build = () => {
 
   let i = 0;
 
-  infoContainer.innerHTML = "";
-  for (const [k, v] of Object.entries(info)) {
-    const infoBox = document.createElement("div");
-    infoBox.classList.add("infoBox");
-    infoBox.addEventListener("click", () => {
-      navigator.clipboard.writeText(v);
-
-      infoBox.classList.add("copied");
-      setTimeout(() => {
-        infoBox.classList.remove("copied");
-      }, 1500);
+  if (infoContainer.children.length > 0) {
+    [...infoContainer.children].forEach((box) => {
+      box.style.animation = "230ms ease forwards hideInBottom";
     });
-    infoBox.style.animation = `200ms ease-in-out ${
-      i * 40
-    }ms forwards slideInTop`;
-
-    const pKey = document.createElement("p");
-    pKey.innerHTML = `${k.replaceAll("_", " ")}`;
-
-    const spanValue = document.createElement("span");
-    spanValue.classList.add("value");
-    spanValue.innerHTML = v;
-
-    infoBox.append(pKey, spanValue);
-
-    infoContainer.append(infoBox);
-    i++;
   }
+
+  setTimeout(
+    () => {
+      infoContainer.innerHTML = "";
+      for (const [k, v] of Object.entries(info)) {
+        const infoBox = document.createElement("div");
+        infoBox.classList.add("infoBox");
+        infoBox.addEventListener("click", () => {
+          navigator.clipboard.writeText(v);
+
+          infoBox.classList.add("copied");
+          setTimeout(() => {
+            infoBox.classList.remove("copied");
+          }, 1500);
+        });
+        infoBox.style.animation = `200ms ease-in-out ${
+          i * 40
+        }ms forwards slideInTop`;
+
+        const pKey = document.createElement("p");
+        pKey.innerHTML = `${k.replaceAll("_", " ")}`;
+
+        const spanValue = document.createElement("span");
+        spanValue.classList.add("value");
+        spanValue.innerHTML = v;
+
+        infoBox.append(pKey, spanValue);
+
+        infoContainer.append(infoBox);
+        i++;
+      }
+    },
+    infoContainer.children.length > 0 ? 200 : 0
+  );
 };
 
 const setMask = (newMask) => {
@@ -946,4 +957,4 @@ document.addEventListener("DOMContentLoaded", prepare);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundledc2e9e190befb5fb85ca.js.map
+//# sourceMappingURL=bundle137ceeeadf7b9fdc475f.js.map

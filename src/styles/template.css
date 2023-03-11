@@ -10,9 +10,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  position: relative;
 }
 
 .actions {
@@ -128,6 +128,15 @@
   font-weight: 600;
   border-bottom: 3px solid black;
   padding: 0 4px;
+}
+
+footer {
+  width: 100%;
+  padding: 4px;
+  background-color: rgb(207, 207, 207, 0.2);
+  text-align: center;
+  bottom: 0;
+  position: fixed;
 }
 
 @keyframes slideInTop {
